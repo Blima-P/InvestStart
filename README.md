@@ -6,7 +6,7 @@ O **InvestStart** é uma aplicação web que, a cada execução, coleta dados at
 oportunidades de investimento de forma **educativa**, considerando potencial de crescimento no curto e
 longo prazo, nível de risco e o perfil do investidor iniciante.
 
-> ⚠️ **Aviso:** o InvestStart é um projeto educacional e **não constitui recomendação de investimento**.
+> ⚠️ **Aviso:** o InvestStart é um projeto educacional/Pessoal e **não constitui recomendação de investimento**.
 > Rentabilidade passada não garante rentabilidade futura. Consulte um profissional certificado antes de investir.
 
 ## 🎯 Público-alvo
