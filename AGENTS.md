@@ -36,24 +36,19 @@ Ao terminar uma alteração, o agente deve **entregar ao usuário os comandos pr
 explicando cada passo. Exemplo:
 
 ```powershell
-# 1. Criar a branch da feature
+# Nova branch
 git switch -c feat/nome-da-feature
 
-# 2. Conferir o que mudou
+# Confere o que mudou
 git status
-git diff
 
-# 3. Adicionar os arquivos
-git add caminho/do/arquivo
-
-# 4. Commit seguindo Conventional Commits
+# Salva as mudanças
+git add -A
 git commit -m "feat(escopo): descrição curta"
 
-# 5. Enviar para o GitHub
+# Manda pro GitHub e abre o PR
 git push -u origin feat/nome-da-feature
-
-# 6. Abrir o PR
-gh pr create --base main --title "feat(escopo): descrição" --body "Descrição do que foi feito"
+gh pr create --base main --title "feat(escopo): descrição" --body "O que foi feito, em poucas linhas."
 ```
 
 ### Conta do GitHub
@@ -98,6 +93,34 @@ Junto com os comandos, o agente deve sugerir:
 - **Backend:** Python 3.12 + FastAPI em `backend/` (ver [backend/README.md](backend/README.md)).
 - **Frontend:** React + TypeScript (Vite) em `frontend/`.
 - **Ambiente:** Windows + PowerShell. Docker ainda **não** está instalado na máquina.
+
+## ✍️ Estilo de comentários e textos
+
+Escreva como uma pessoa escreveria, não como um robô. Vale para comentários no código,
+comandos passados ao usuário, mensagens de commit, descrições de PR e documentação.
+
+- **Curto e direto:** uma linha sempre que der. Se precisa de um parágrafo, o código provavelmente precisa ser mais claro.
+- **Comente o porquê, não o óbvio:** nada de `# importa o FastAPI` ou `# retorna o resultado`.
+- **Linguagem natural:** "Manda pro GitHub" em vez de "Realizar o envio das alterações para o repositório remoto".
+- **Sem siglas internas nos comentários de código** (RN01, RNF05...) — elas ficam nos docs.
+- **Sem enfeite:** nada de emojis, "✨", "🤖" ou textos de marketing em código e commits.
+- **Commits e PRs:** título curto no Conventional Commits; corpo só se acrescentar algo útil.
+
+Exemplos:
+
+```python
+# Ruim
+# Esta função é responsável por realizar o cálculo do score do ativo conforme a RN05
+# Bom
+# Score maior = melhor relação retorno/risco
+```
+
+```powershell
+# Ruim
+# 4. Realizar o commit das alterações seguindo o padrão Conventional Commits
+# Bom
+# Salva as mudanças
+```
 
 ## 🧭 Convenções
 
