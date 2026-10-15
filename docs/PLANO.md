@@ -22,6 +22,7 @@ InvestStart/
 ├── backend/
 │   ├── app/
 │   │   ├── api/
+│   │   ├── core/
 │   │   ├── collectors/
 │   │   ├── analysis/
 │   │   ├── portfolio/
@@ -41,7 +42,7 @@ InvestStart/
 ### Fase 0 – Fundação (semana 1)
 - [x] Definir nome, escopo e stack
 - [x] Criar repositório e documentação inicial
-- [ ] Configurar backend FastAPI (estrutura, linters, testes)
+- [x] Configurar backend FastAPI (estrutura, linters, testes)
 - [ ] Configurar frontend React + Vite + TypeScript
 - [ ] Docker Compose e CI com GitHub Actions (lint + testes)
 
