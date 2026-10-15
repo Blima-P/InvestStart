@@ -1,0 +1,26 @@
+# Decisões técnicas
+
+Registro curto do que foi decidido e por quê. A entrada mais recente fica no topo.
+
+---
+
+### 2026-10-15 – Agentes de IA não fazem operações de Git
+**Decisão:** commits, pushes, PRs e tags são feitos manualmente pelo autor. O agente só sugere os comandos.
+**Por quê:** controle total do histórico e da autoria. As regras ficam no [AGENTS.md](../AGENTS.md).
+
+### 2026-10-15 – Configuração via `.env` com pydantic-settings
+**Decisão:** toda configuração e todo segredo vêm de variáveis de ambiente, lidas pelo `pydantic-settings`.
+**Por quê:** os tokens ficam fora do código (RNF05) e o Pydantic valida os tipos ao iniciar.
+
+### 2026-10-15 – Ruff como linter e formatador
+**Decisão:** usar só o Ruff, sem Black, isort ou Flake8.
+**Por quê:** uma ferramenta só, muito rápida, e o formatador é compatível com o Black.
+
+### 2026-10-15 – Cobertura mínima de 70% no pytest
+**Decisão:** `fail_under = 70` no `pyproject.toml`.
+**Por quê:** atende o RNF06 e quebra os testes se a cobertura cair, em vez de depender de conferência manual.
+
+### 2026-10-14 – Stack: FastAPI + React/Vite + SQLite
+**Decisão:** backend em Python 3.12 com FastAPI, frontend em React + TypeScript (Vite), banco SQLite no MVP.
+**Por quê:** Python tem o melhor ecossistema para dados financeiros. O FastAPI gera a documentação da API sozinho.
+O SQLite não precisa de servidor e dá para migrar para PostgreSQL depois.
