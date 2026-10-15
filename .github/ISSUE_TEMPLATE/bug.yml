@@ -1,0 +1,28 @@
+name: Bug
+description: Algo não funciona como deveria
+labels: ["bug"]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: O que aconteceu
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: O que era esperado
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Como reproduzir
+      placeholder: |
+        1. ...
+        2. ...
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs ou prints
+      description: Não cole tokens nem dados do .env.
