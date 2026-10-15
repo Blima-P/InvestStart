@@ -35,6 +35,7 @@ Investidores iniciantes que não sabem por onde começar.
 - [Requisitos](docs/REQUISITOS.md)
 - [Regras de negócio](docs/REGRAS.md)
 - [Plano de execução](docs/PLANO.md)
+- [Decisões técnicas](docs/DECISOES.md)
 
 ## 📄 Licença
 

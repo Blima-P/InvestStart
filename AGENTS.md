@@ -87,12 +87,69 @@ Junto com os comandos, o agente deve sugerir:
 ## 📌 Contexto do projeto
 
 - **O que é:** app web educativo que sugere oportunidades de investimento para iniciantes.
-- **Documentação:** [README](README.md), [Requisitos](docs/REQUISITOS.md), [Regras](docs/REGRAS.md), [Plano](docs/PLANO.md).
+- **Documentação:** [README](README.md), [Requisitos](docs/REQUISITOS.md), [Regras](docs/REGRAS.md), [Plano](docs/PLANO.md), [Decisões](docs/DECISOES.md).
 - **Progresso:** acompanhe os checkboxes em [docs/PLANO.md](docs/PLANO.md) e continue pelo próximo item pendente.
   Ao concluir um item, marque-o como `[x]` no plano.
 - **Backend:** Python 3.12 + FastAPI em `backend/` (ver [backend/README.md](backend/README.md)).
 - **Frontend:** React + TypeScript (Vite) em `frontend/`.
 - **Ambiente:** Windows + PowerShell. Docker ainda **não** está instalado na máquina.
+
+## ✅ Definition of Done
+
+Antes de passar os comandos de commit ao usuário, confira:
+
+- [ ] `ruff check .` e `ruff format --check .` sem erros
+- [ ] `pytest` passando, com cobertura ≥ 70%
+- [ ] Testes novos para toda lógica nova
+- [ ] Item marcado como `[x]` no `docs/PLANO.md`, se concluído
+- [ ] `.env.example` atualizado, se surgiu variável nova
+- [ ] `docs/DECISOES.md` atualizado, se houve decisão importante
+- [ ] README atualizado, se mudou o jeito de rodar o projeto
+
+## 🛠️ Boas práticas
+
+### Escopo
+- Uma tarefa por vez e um PR por item do plano.
+- Não fazer melhorias, refatorações ou "aproveitei e arrumei" sem o usuário pedir. Sugira e espere.
+- Dúvida de regra de negócio ou de arquitetura: pergunte antes de implementar.
+
+### Testes
+- Testes **nunca** chamam APIs reais (brapi, BCB, CoinGecko, Tesouro). Use respostas simuladas (mock).
+- Guarde exemplos de respostas reais em `backend/tests/fixtures/` para usar nos mocks.
+- Teste também o caminho de erro: API fora do ar, resposta vazia, dado inválido.
+
+### Regras de negócio
+- Percentuais, limites e pesos das regras (RN02, RN05, RN06, RN07) ficam em configuração,
+  nunca soltos no código. Exemplo: `MAX_CRIPTO = 0.10`, não um `0.1` perdido num `if`.
+- Toda regra implementada deve ter teste com o caso limite (ex.: cripto exatamente em 10%).
+
+### Código
+- Type hints em todas as funções.
+- Funções pequenas, com um único objetivo.
+- `logging` em vez de `print`.
+- Nunca registrar tokens, chaves ou dados pessoais nos logs.
+- Erros de fontes externas são tratados: usar o último dado válido e avisar (RN08).
+
+### Dependências
+- Antes de adicionar uma biblioteca, pergunte ao usuário e explique por que ela é necessária.
+- Prefira a biblioteca padrão do Python ou o que já está no projeto.
+- Toda dependência nova vai no `pyproject.toml` (backend) ou `package.json` (frontend).
+
+### Decisões
+- Decisão importante (biblioteca, arquitetura, mudança de regra) ganha uma entrada em
+  [docs/DECISOES.md](docs/DECISOES.md): o que foi decidido e por quê, em poucas linhas.
+
+### Versionamento
+- [SemVer](https://semver.org/lang/pt-BR/): `MAIOR.MENOR.CORREÇÃO`. Enquanto estiver em `0.x`, o projeto é considerado em desenvolvimento.
+- Cada fase concluída do plano aumenta o número do meio: Fase 0 → `v0.1.0`, Fase 1 → `v0.2.0`, etc.
+- A versão fica em `backend/app/__init__.py`, `backend/pyproject.toml` e, quando existir, `frontend/package.json`.
+- Ao fechar uma fase, passe ao usuário os comandos da tag:
+
+```powershell
+# Marca a versão e manda pro GitHub
+git tag -a v0.1.0 -m "Fase 0 concluída"
+git push origin v0.1.0
+```
 
 ## ✍️ Estilo de comentários e textos
 
