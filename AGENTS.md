@@ -104,6 +104,7 @@ Antes de passar os comandos de commit ao usuário, confira:
 - [ ] Item marcado como `[x]` no `docs/PLANO.md`, se concluído
 - [ ] `.env.example` atualizado, se surgiu variável nova
 - [ ] `docs/DECISOES.md` atualizado, se houve decisão importante
+- [ ] `CHANGELOG.md` atualizado na seção "Não lançado"
 - [ ] README atualizado, se mudou o jeito de rodar o projeto
 
 ## 🛠️ Boas práticas

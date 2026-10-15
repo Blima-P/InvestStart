@@ -1,0 +1,31 @@
+name: Tarefa
+description: Item do plano ou nova funcionalidade
+labels: ["tarefa"]
+body:
+  - type: dropdown
+    id: fase
+    attributes:
+      label: Fase
+      options:
+        - "Fase 0 – Fundação"
+        - "Fase 1 – Coleta de dados"
+        - "Fase 2 – Motor de análise"
+        - "Fase 3 – Perfil e carteira"
+        - "Fase 4 – Frontend"
+        - "Fase 5 – Polimento e publicação"
+    validations:
+      required: true
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo
+      placeholder: O que precisa ser feito e por quê.
+    validations:
+      required: true
+  - type: textarea
+    id: pronto
+    attributes:
+      label: Pronto quando
+      placeholder: |
+        - [ ] ...
+        - [ ] Testes cobrindo o caso principal e o de erro
