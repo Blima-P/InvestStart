@@ -2,6 +2,7 @@
 
 > O ponto de partida para quem nunca investiu.
 
+![CI](https://github.com/Blima-P/InvestStart/actions/workflows/ci.yml/badge.svg)
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
@@ -19,7 +20,7 @@ longo prazo, nível de risco e o perfil do investidor iniciante.
 
 | Fase | Situação |
 |---|---|
-| 0 – Fundação | 🟡 Em andamento: backend e frontend prontos; faltam Docker e CI |
+| 0 – Fundação | 🟡 Em andamento: backend, frontend e CI prontos; falta Docker |
 | 1 – Coleta de dados | ⚪ Não iniciada |
 | 2 – Motor de análise | ⚪ Não iniciada |
 | 3 – Perfil e carteira | ⚪ Não iniciada |

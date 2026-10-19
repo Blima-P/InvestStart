@@ -4,6 +4,10 @@ Registro curto do que foi decidido e por quê. A entrada mais recente fica no to
 
 ---
 
+### 2026-10-19 – CI no GitHub Actions
+**Decisão:** um workflow com dois jobs em paralelo (backend e frontend) que roda em todo PR e em push na `main`.
+**Por quê:** substitui o revisor que um projeto individual não tem. Nada entra na `main` com lint, teste ou build quebrado.
+
 ### 2026-10-19 – Proxy do Vite para chamar a API em dev
 **Decisão:** em desenvolvimento, o Vite repassa `/api` para `localhost:8000`. Em produção, a URL vem de `VITE_API_URL`.
 **Por quê:** o frontend chama sempre caminhos relativos, sem URL fixa no código e sem depender de CORS em dev.
