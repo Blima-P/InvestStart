@@ -4,6 +4,12 @@ Registro curto do que foi decidido e por quê. A entrada mais recente fica no to
 
 ---
 
+### 2026-10-19 – Docker Compose com nginx no frontend
+**Decisão:** o frontend roda num container nginx que serve o build e repassa `/api` para o backend. O CI sobe os
+containers e testa as duas pontas a cada PR.
+**Por quê:** site e API ficam na mesma origem (sem CORS), a imagem final não leva Node, e o Docker fica validado
+mesmo sem estar instalado na máquina de desenvolvimento.
+
 ### 2026-10-19 – CI no GitHub Actions
 **Decisão:** um workflow com dois jobs em paralelo (backend e frontend) que roda em todo PR e em push na `main`.
 **Por quê:** substitui o revisor que um projeto individual não tem. Nada entra na `main` com lint, teste ou build quebrado.

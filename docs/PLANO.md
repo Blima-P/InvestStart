@@ -44,7 +44,7 @@ InvestStart/
 - [x] Criar repositório e documentação inicial
 - [x] Configurar backend FastAPI (estrutura, linters, testes)
 - [x] Configurar frontend React + Vite + TypeScript
-- [ ] Docker Compose
+- [x] Docker Compose
 - [x] CI com GitHub Actions (lint + testes)
 
 ### Fase 1 – Coleta de dados (semanas 2–3)
