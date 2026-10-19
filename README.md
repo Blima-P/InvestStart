@@ -20,7 +20,7 @@ longo prazo, nível de risco e o perfil do investidor iniciante.
 
 | Fase | Situação |
 |---|---|
-| 0 – Fundação | 🟡 Em andamento: backend, frontend e CI prontos; falta Docker |
+| 0 – Fundação | ✅ Concluída (v0.1.0) |
 | 1 – Coleta de dados | ⚪ Não iniciada |
 | 2 – Motor de análise | ⚪ Não iniciada |
 | 3 – Perfil e carteira | ⚪ Não iniciada |
@@ -52,6 +52,21 @@ Investidores iniciantes que não sabem por onde começar.
 
 ## ▶️ Como rodar
 
+### Com Docker (um comando)
+
+Pré-requisito: [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+
+```powershell
+docker compose up --build
+```
+
+- Site: http://localhost:8080
+- API e documentação: http://localhost:8000/docs
+
+Para parar: `Ctrl+C` e depois `docker compose down`.
+
+### Sem Docker (modo desenvolvimento)
+
 Pré-requisitos: Python 3.12 e Node.js 20+. Use dois terminais.
 
 **Backend**
@@ -82,9 +97,10 @@ Mais detalhes em [backend/README.md](backend/README.md) e [frontend/README.md](f
 
 ```
 InvestStart/
-├── backend/    # API FastAPI: coleta, análise e carteira
-├── frontend/   # interface em React + TypeScript (Vite)
-└── docs/       # requisitos, regras, plano e decisões
+├── backend/             # API FastAPI: coleta, análise e carteira
+├── frontend/            # interface em React + TypeScript (Vite)
+├── docs/                # requisitos, regras, plano e decisões
+└── docker-compose.yml   # sobe tudo com um comando
 ```
 
 ## 📚 Documentação

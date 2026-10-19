@@ -93,7 +93,8 @@ Junto com os comandos, o agente deve sugerir:
   Ao concluir um item, marque-o como `[x]` no plano.
 - **Backend:** Python 3.12 + FastAPI em `backend/` (ver [backend/README.md](backend/README.md)).
 - **Frontend:** React + TypeScript (Vite) em `frontend/`.
-- **Ambiente:** Windows + PowerShell. Docker ainda **não** está instalado na máquina.
+- **Ambiente:** Windows + PowerShell. Docker **não** está instalado na máquina; o `docker-compose.yml` é testado
+  pelo job `Docker` do CI.
 
 ## ✅ Definition of Done
 

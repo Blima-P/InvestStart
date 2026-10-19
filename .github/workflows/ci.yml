@@ -70,3 +70,25 @@ jobs:
 
       - name: Build
         run: npm run build
+
+  docker:
+    name: Docker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build e subida
+        run: docker compose up --build --detach --wait
+
+      - name: Teste de fumaça
+        run: |
+          curl --fail --silent http://localhost:8080 | grep -q '<title>InvestStart</title>'
+          curl --fail --silent http://localhost:8080/api/health | grep -q '"status":"ok"'
+
+      - name: Logs
+        if: failure()
+        run: docker compose logs
+
+      - name: Derrubar
+        if: always()
+        run: docker compose down
