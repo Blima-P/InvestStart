@@ -19,7 +19,7 @@ longo prazo, nível de risco e o perfil do investidor iniciante.
 
 | Fase | Situação |
 |---|---|
-| 0 – Fundação | 🟡 Em andamento: backend pronto; faltam frontend e CI |
+| 0 – Fundação | 🟡 Em andamento: backend e frontend prontos; faltam Docker e CI |
 | 1 – Coleta de dados | ⚪ Não iniciada |
 | 2 – Motor de análise | ⚪ Não iniciada |
 | 3 – Perfil e carteira | ⚪ Não iniciada |
@@ -51,7 +51,9 @@ Investidores iniciantes que não sabem por onde começar.
 
 ## ▶️ Como rodar
 
-Pré-requisito: Python 3.12.
+Pré-requisitos: Python 3.12 e Node.js 20+. Use dois terminais.
+
+**Backend**
 
 ```powershell
 cd backend
@@ -63,14 +65,24 @@ uvicorn app.main:app --reload
 ```
 
 A API sobe em http://localhost:8000 e a documentação fica em http://localhost:8000/docs.
-Mais detalhes em [backend/README.md](backend/README.md).
+
+**Frontend**
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+O site abre em http://localhost:5173.
+Mais detalhes em [backend/README.md](backend/README.md) e [frontend/README.md](frontend/README.md).
 
 ## 🗂️ Estrutura
 
 ```
 InvestStart/
 ├── backend/    # API FastAPI: coleta, análise e carteira
-├── frontend/   # React + TypeScript (em breve)
+├── frontend/   # interface em React + TypeScript (Vite)
 └── docs/       # requisitos, regras, plano e decisões
 ```
 

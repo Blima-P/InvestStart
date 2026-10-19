@@ -30,7 +30,7 @@
 | RNF06 | Cobertura de testes mínima de 70% no backend (motor de análise). |
 | RNF07 | API documentada automaticamente (OpenAPI/Swagger do FastAPI). |
 | RNF08 | Respeitar limites de requisição e termos de uso das APIs utilizadas (sem *scraping* não autorizado). |
-| RNF09 | Código padronizado com linters (Ruff/Black no Python, ESLint/Prettier no React). |
+| RNF09 | Código padronizado com linters (Ruff no Python, oxlint/Prettier no React). |
 | RNF10 | Projeto executável localmente com um comando (Docker Compose). |
 
 ## Fontes de dados previstas
