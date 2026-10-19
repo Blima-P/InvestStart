@@ -4,6 +4,18 @@ Registro curto do que foi decidido e por quê. A entrada mais recente fica no to
 
 ---
 
+### 2026-10-19 – Proxy do Vite para chamar a API em dev
+**Decisão:** em desenvolvimento, o Vite repassa `/api` para `localhost:8000`. Em produção, a URL vem de `VITE_API_URL`.
+**Por quê:** o frontend chama sempre caminhos relativos, sem URL fixa no código e sem depender de CORS em dev.
+
+### 2026-10-19 – Vitest + Testing Library no frontend
+**Decisão:** testes de componentes com Vitest, jsdom e Testing Library, sempre com `fetch` simulado.
+**Por quê:** o Vitest usa a mesma configuração do Vite, e a Testing Library testa o que o usuário vê, não detalhes internos.
+
+### 2026-10-19 – oxlint + Prettier no frontend
+**Decisão:** manter o oxlint, que já vem no template oficial do Vite, em vez do ESLint. Formatação com Prettier.
+**Por quê:** é o padrão atual do Vite, muito mais rápido e cobre as regras de React e TypeScript. O RNF09 foi ajustado.
+
 ### 2026-10-15 – Agentes de IA não fazem operações de Git
 **Decisão:** commits, pushes, PRs e tags são feitos manualmente pelo autor. O agente só sugere os comandos.
 **Por quê:** controle total do histórico e da autoria. As regras ficam no [AGENTS.md](../AGENTS.md).

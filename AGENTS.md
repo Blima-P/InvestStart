@@ -81,7 +81,8 @@ Junto com os comandos, o agente deve sugerir:
 
 - Criar e editar arquivos de código e documentação
 - Instalar dependências no ambiente virtual local (`backend/.venv`, `node_modules`)
-- Rodar linters, formatadores e testes (`ruff check .`, `ruff format .`, `pytest`)
+- Rodar linters, formatadores e testes (backend: `ruff check .`, `ruff format .`, `pytest`;
+  frontend: `npm run lint`, `npm run format`, `npm test`, `npm run build`)
 - Subir o servidor localmente para validar e encerrá-lo em seguida
 
 ## 📌 Contexto do projeto
@@ -100,6 +101,7 @@ Antes de passar os comandos de commit ao usuário, confira:
 
 - [ ] `ruff check .` e `ruff format --check .` sem erros
 - [ ] `pytest` passando, com cobertura ≥ 70%
+- [ ] Frontend: `npm run lint`, `npm run format:check`, `npm test` e `npm run build` sem erros
 - [ ] Testes novos para toda lógica nova
 - [ ] Item marcado como `[x]` no `docs/PLANO.md`, se concluído
 - [ ] `.env.example` atualizado, se surgiu variável nova
@@ -143,7 +145,7 @@ Antes de passar os comandos de commit ao usuário, confira:
 ### Versionamento
 - [SemVer](https://semver.org/lang/pt-BR/): `MAIOR.MENOR.CORREÇÃO`. Enquanto estiver em `0.x`, o projeto é considerado em desenvolvimento.
 - Cada fase concluída do plano aumenta o número do meio: Fase 0 → `v0.1.0`, Fase 1 → `v0.2.0`, etc.
-- A versão fica em `backend/app/__init__.py`, `backend/pyproject.toml` e, quando existir, `frontend/package.json`.
+- A versão fica em `backend/app/__init__.py`, `backend/pyproject.toml` e `frontend/package.json`.
 - Ao fechar uma fase, passe ao usuário os comandos da tag:
 
 ```powershell
